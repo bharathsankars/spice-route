@@ -4,7 +4,10 @@ import { FaShoppingCart } from 'react-icons/fa';
 import './Navbar.css';
 import logo from '../../assets/Logo.png'; // Ensure to add your logo to this path
 
-const Navbar = () => {
+const Navbar = ({ isAuthenticated }) => {
+  if (!isAuthenticated) {
+    return null; // Don't render the navbar
+  }
   return (
     <nav className="navbar">
       <div className="nav-brand">

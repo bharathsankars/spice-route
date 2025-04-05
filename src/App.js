@@ -69,7 +69,7 @@ function App() {
             <Route path="/bucket" element={<Bucket />} />
             <Route
               path="/login"
-              element={isUserAuthenticated ? <Navigate to="/" /> : <UserLogin onLogin={handleUserLogin} />}
+              element={<UserLogin onLogin={handleUserLogin} isAuthenticated={isUserAuthenticated} />}
             />
             <Route
               path="/register"
@@ -101,6 +101,7 @@ function App() {
               element={<Admin />}
             />
           </Routes>
+          {isUserAuthenticated && (
 
           <footer className="footer">
             <div className="footer-content">
@@ -152,6 +153,7 @@ function App() {
               <p>&copy; 2025 Spice Route Restaurant. All rights reserved.</p>
             </div>
           </footer>
+          )}
         </div>
       </Router>
     </CartProvider>

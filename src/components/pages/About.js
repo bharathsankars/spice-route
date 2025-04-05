@@ -24,7 +24,7 @@ const About = () => {
             </div>
 
           </div>
-          
+        
         </section>
 
         <section className="values-section">

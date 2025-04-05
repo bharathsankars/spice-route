@@ -6,6 +6,7 @@ const UserRegister = ({ onRegister }) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '',
     password: '',
     confirmPassword: ''
   });
@@ -34,6 +35,7 @@ const UserRegister = ({ onRegister }) => {
     onRegister({
       name: formData.name,
       email: formData.email,
+      phone: formData.phone,
       provider: 'email'
     });
     navigate('/');
@@ -45,7 +47,7 @@ const UserRegister = ({ onRegister }) => {
         <h2>Create an Account</h2>
         {error && <div className="error-message">{error}</div>}
         
-        <div className="social-login">
+        {/* <div className="social-login">
           <button 
             className="social-button google"
             onClick={() => handleSocialRegister('google')}
@@ -69,11 +71,11 @@ const UserRegister = ({ onRegister }) => {
             <img src="https://www.apple.com/favicon.ico" alt="Apple" />
             Sign up with Apple
           </button>
-        </div>
-
+        </div> */}
+{/* 
         <div className="divider">
           <span>or</span>
-        </div>
+        </div> */}
 
         <form onSubmit={handleSubmit}>
           <div className="form-group">
@@ -92,6 +94,15 @@ const UserRegister = ({ onRegister }) => {
               type="email"
               value={formData.email}
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label>Phone Number</label>
+            <input
+              type="tel"
+              value={formData.phone}
+              onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
               required
             />
           </div>

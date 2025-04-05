@@ -107,6 +107,9 @@
   font-size: 1.8rem;
   color: #e65100;
   margin-bottom: 1rem;
+  text-align: center;
+  position: relative;
+  padding-bottom: 1rem;
 }
 
 .values-grid {
@@ -159,9 +162,6 @@
     font-size: 2.5rem;
   }
 
-  .chef-info {
-    grid-template-columns: 1fr;
-  }
 
   .chef-image {
     padding-bottom: 70%;

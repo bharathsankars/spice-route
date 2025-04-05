@@ -49,11 +49,11 @@ const Home = () => {
   const nextImage = () => {
     setCurrentImage((prev) => (prev + 1) % images.length);
   };
-  
+
   const prevImage = () => {
     setCurrentImage((prev) => (prev - 1 + images.length) % images.length);
   };
-  
+
 
   return (
     <div className="page-content">
@@ -61,9 +61,9 @@ const Home = () => {
         <div className="hero-content">
         </div>
         <div className="hero-controls">
-  <button className="nav-button prev-button" title="Previous" onClick={prevImage}>‹</button>
-  <button className="nav-button next-button" title="Next" onClick={nextImage}>›</button>
-</div>
+          <button className="nav-button prev-button" title="Previous" onClick={prevImage}>‹</button>
+          <button className="nav-button next-button" title="Next" onClick={nextImage}>›</button>
+        </div>
 
         <div className="hero-backgrounds">
           {images.map((image, index) => (
@@ -91,9 +91,9 @@ const Home = () => {
           <h2 className="section-title">Welcome to Spice Route</h2>
           <p className="section-text">
             Welcome to Spice Route, where culinary excellence meets exceptional hospitality.
-            Located in the heart of Munich, we offer an exquisite dining experience that is sure to captivate your senses. 
-            Our carefully crafted dishes, inspired by global flavors, are made with the highest quality ingredients, ensuring a delightful culinary journey. 
-            Whether you're here for a casual meal or a special celebration, our inviting atmosphere and impeccable service promise an unforgettable experience. 
+            Located in the heart of Munich, we offer an exquisite dining experience that is sure to captivate your senses.
+            Our carefully crafted dishes, inspired by global flavors, are made with the highest quality ingredients, ensuring a delightful culinary journey.
+            Whether you're here for a casual meal or a special celebration, our inviting atmosphere and impeccable service promise an unforgettable experience.
             Join us and embark on a gastronomic adventure that reflects our passion for fine dining.
           </p>
           <div className="cta-buttons">
@@ -101,7 +101,7 @@ const Home = () => {
             <Link to="/reserve" className="cta-button reserve-button">Reserve Your Seat</Link>
           </div>
         </section>
-        
+
 
         <div className="features-grid">
           <div className="feature-card">
@@ -161,8 +161,8 @@ const Home = () => {
               </div>
               <div className="offer-card weekend-special">
                 <div className="special-badge">Chef's Choice</div>
-                <h3>Tandoor Special</h3>
-                <p>Assorted tandoor items with special marinades, served with mint chutney and salad</p>
+                <h3>Tandoori Special</h3>
+                <p>Assorted tandoori items with special marinades, served with mint chutney and salad</p>
                 <div className="price-tag">
                   <span className="price">19.99</span>
                 </div>
