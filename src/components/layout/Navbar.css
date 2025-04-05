@@ -1,0 +1,85 @@
+.navbar {
+  background-color: rgba(0, 0, 0, 0.9);
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo-image {
+  height: 60px;
+  width: auto;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #d4af37;
+}
+
+.bucket-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  background-color: #d4af37;
+  color: black !important;
+}
+
+.bucket-link:hover {
+  background-color: #e5c158;
+  color: black !important;
+  transform: translateY(-1px);
+}
+
+.bucket-link svg {
+  font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .logo-image {
+    height: 50px;
+  }
+  
+  .nav-links {
+    margin: 1rem 0;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .bucket-link {
+    padding: 0.4rem 0.8rem;
+  }
+}

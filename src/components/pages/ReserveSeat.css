@@ -1,0 +1,278 @@
+/* General Styles */
+.reserve-seat {
+  background-color: #f4f4f9;
+  padding: 5rem 2rem;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('../../assets/Background-Blur.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.reserve-container {
+  background-color: #fff;
+  padding: 2.5rem 3.5rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 650px;
+  font-family: 'Arial', sans-serif;
+}
+
+.reserve-title {
+  font-size: 2.8rem;
+  color: #e65100;
+  margin-bottom: 1.2rem;
+  text-align: center;
+}
+
+.reserve-subtitle {
+  font-size: 1.1rem;
+  color: #555;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.reserve-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.form-group label {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.form-icon {
+  margin-right: 0.6rem;
+  color: #e65100;
+  font-size: 1.2rem;
+}
+
+.form-input {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-sizing: border-box;
+  margin-top: 0.5rem;
+  transition: all 0.3s ease;
+  background-color: #f9f9f9;
+  cursor: pointer;
+}
+
+.form-input:focus {
+  border-color: #e65100;
+  outline: none;
+  background-color: #fff;
+}
+
+/* Button Styling */
+.submit-btn {
+  background-color: #e65100;
+  color: #fff;
+  padding: 1.2rem;
+  font-size: 1.3rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #f57c00;
+}
+
+.submit-btn:focus {
+  outline: none;
+}
+.reservation-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem; /* optional, controls space between buttons */
+  margin-top: 1rem; /* optional spacing */
+}
+
+
+/* Reservation Actions Buttons */
+.reservation-actions button {
+  padding: 1rem;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 48%;
+  font-weight: bold;
+}
+
+/* Book New Button */
+.book-new-btn {
+  background-color: #4CAF50; /* Green */
+  color: white;
+}
+
+.book-new-btn:hover {
+  background-color: #45a049; /* Darker Green */
+}
+
+.book-new-btn:active {
+  transform: scale(0.98);
+}
+
+/* OK Button */
+.ok-btn {
+  background-color: #2196F3; /* Blue */
+  color: white;
+}
+
+.ok-btn:hover {
+  background-color: #1976D2; /* Darker Blue */
+}
+
+.ok-btn:active {
+  transform: scale(0.98);
+}
+
+/* Cancel Button */
+.cancel-btn {
+  background-color: #f44336; /* Red */
+  color: white;
+}
+
+.cancel-btn:hover {
+  background-color: #e53935; /* Darker Red */
+}
+
+.cancel-btn:active {
+  transform: scale(0.98);
+}
+
+/* Change Reservation Button */
+.change-btn {
+  background-color: #FFC107; /* Amber/Yellow */
+  color: white;
+}
+
+.change-btn:hover {
+  background-color: #ffb300; /* Darker Yellow */
+}
+
+.change-btn:active {
+  transform: scale(0.98);
+}
+
+/* Hover Effects */
+.reservation-actions button:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
+}
+
+/* Reservation Details Section */
+.reservation-details {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
+  width: 100%;
+  max-width: 650px;
+  font-family: 'Arial', sans-serif;
+  text-align: left;
+}
+
+.reservation-details h2 {
+  font-size: 2rem;
+  color: #e65100;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.reservation-details p {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.reservation-details p strong {
+  font-weight: bold;
+  color: #e65100;
+}
+
+/* Notification Styles */
+.notification {
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 1rem 2rem;
+  border-radius: 6px;
+  color: white;
+  font-size: 1.2rem;
+  z-index: 999;
+  opacity: 0;
+  animation: fadeInOut 3s ease-in-out forwards;
+}
+
+.notification.success {
+  background-color: #4caf50; /* Green */
+}
+
+.notification.error {
+  background-color: #f44336; /* Red */
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .reserve-container {
+    padding: 2rem;
+  }
+
+  .reserve-title {
+    font-size: 2.2rem;
+  }
+
+  .reserve-subtitle {
+    font-size: 1rem;
+  }
+
+  .form-input {
+    padding: 0.9rem;
+  }
+
+  .submit-btn {
+    padding: 1rem;
+  }
+
+  .reservation-actions button {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+}

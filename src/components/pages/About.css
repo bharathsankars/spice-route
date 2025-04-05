@@ -1,0 +1,173 @@
+.about-page {
+  min-height: calc(100vh - 60px);
+  background-color: #1a1a1a;
+}
+
+.about-hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+              url('../../assets/Background-Blur.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: white;
+  text-align: center;
+  padding: 8rem 2rem;
+  margin-bottom: 2rem;
+}
+
+.about-hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  
+}
+
+.about-hero .subtitle {
+  font-size: 1.5rem;
+  color: #e65100;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+.about-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  color: #ffffff;
+}
+
+.mission-section,
+.story-section,
+.chef-section,
+.values-section {
+  margin-bottom: 5rem;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+}
+
+.about-content h2 {
+  font-size: 2.5rem;
+  color: #e65100;
+  margin-bottom: 2rem;
+  text-align: center;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.about-content h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background-color: #e65100;
+}
+
+.about-content p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #e0e0e0;
+  text-align: justify;
+  letter-spacing: 1px;
+  font-weight: 300;
+  
+}
+
+.chef-info {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.chef-image {
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%;
+}
+
+.chef-placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.chef-text h3 {
+  font-size: 1.8rem;
+  color: #e65100;
+  margin-bottom: 1rem;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.value-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2.5rem 2rem;
+  border-radius: 15px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.value-card h3 {
+  color: #e65100;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.value-card h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 2px;
+  background-color: #e65100;
+}
+
+.value-card p {
+  color: #e0e0e0;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .about-hero {
+    padding: 6rem 1rem;
+  }
+
+  .about-hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .chef-info {
+    grid-template-columns: 1fr;
+  }
+
+  .chef-image {
+    padding-bottom: 70%;
+  }
+
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+}

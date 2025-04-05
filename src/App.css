@@ -1,38 +1,301 @@
+/* Global styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: url('./assets/Background-Blur.png') no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100vh;
+}
+
 .App {
-  text-align: center;
+  /* text-align: center; */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Add a semi-transparent overlay to improve content readability */
+.page-content {
+  background: rgba(255, 255, 255, 0.9);
+  min-height: calc(100vh - 70px); /* Subtract navbar height */
+  /* padding: 2rem; */
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Ensure content is readable */
+.container {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 2rem;
+  border-radius: 8px;
+  margin: 2rem auto;
+  max-width: 1200px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
+
+/* Keep navbar above the background */
+.navbar {
+  position: relative;
+  z-index: 10;
+}
+
+/* Admin dashboard specific styles */
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+              url('./assets/Background-Blur.png');
+  background-size: cover;
+  background-position: center;
+  min-height: 70vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
+  padding: 2rem;
+  position: relative;
+  filter: blur(8px); /* Apply blur effect */
 }
 
-.App-link {
-  color: #61dafb;
+.App-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center, rgba(230, 81, 0, 0.2), rgba(0, 0, 0, 0.5));
+  z-index: 1;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Ensure the content remains sharp */
+.App-header h1,
+.App-header .tagline {
+  position: relative;
+  z-index: 2;
+}
+
+.App-header h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.tagline {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.main-content {
+  padding: 2rem;
+  flex: 1;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.feature-card {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(230, 81, 0, 0.1);
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(230, 81, 0, 0.15);
+}
+
+.feature-card h2 {
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.feature-card p {
+  color: #666;
+}
+
+.cta-section {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.cta-button {
+  background-color: #e65100;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin-left: 1rem;
+}
+
+.cta-button:hover {
+  background-color: #f57c00;
+  transform: scale(1.05);
+}
+
+/* Professional Footer */
+.footer {
+  background-color: #222;
+  color: #fff;
+  padding: 1.5rem 2rem; /* Reduced padding for a smaller height */
+  font-size: 1rem;
+  margin-top: auto;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  gap: 2rem;
+}
+
+.footer-section {
+  flex: 1 1 300px; /* Ensures responsiveness */
+  margin: 0 1rem;
+  text-align: center;
+  padding: 20px;
+  border-radius: 8px;
+  
+}
+
+.footer-section h3 {
+  font-size: 1.25rem;
+  color: #e65100;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.footer-section p {
+  color: #ddd;
+  line-height: 1.6;
+}
+
+.footer-section a {
+  color: #e65100;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+  color: #f57c00;
+}
+
+/* Social media links section */
+.social-media {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  justify-content: center;
+}
+
+.social-media a {
+  color: #fff;
+  font-size: 1.5rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-media a:hover {
+  transform: scale(1.1);
+  color: #e65100;
+}
+
+/* Footer bottom */
+.footer-bottom {
+  text-align: center;
+  padding-top: 1rem;
+  border-top: 1px solid #444;
+  font-size: 0.875rem;
+  color: #bbb;
+}
+
+.footer-bottom p {
+  margin: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
   }
-  to {
-    transform: rotate(360deg);
+  .footer-section {
+    text-align: center;
+  }
+}
+
+
+  .App-header h1 {
+    font-size: 2.5rem;
+  }
+  
+  .tagline {
+    font-size: 1.2rem;
+  }
+  
+  .cta-section {
+    flex-direction: column;
+  }
+
+
+/* Navigation Bar */
+.nav-bar {
+  background-color: rgba(0, 0, 0, 0.9);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-logo {
+  color: #e65100;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #e65100;
+}
+
+
+@media (max-width: 768px) {
+  .App-header h1 {
+    font-size: 2.5rem;
+  }
+  
+  .tagline {
+    font-size: 1.2rem;
+  }
+  
+  .cta-section {
+    flex-direction: column;
   }
 }
