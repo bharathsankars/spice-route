@@ -188,7 +188,25 @@ body {
   text-decoration: none;
   transition: color 0.3s ease;
 }
+.working-hours {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.working-day {
+  font-size: 1rem;
 
+}
+
+.day {
+  font-weight: 600;
+
+}
+
+.hours {
+  font-weight: 400;
+
+}
 .footer-section a:hover {
   color: #f57c00;
 }

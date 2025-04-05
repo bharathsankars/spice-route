@@ -103,56 +103,66 @@ function App() {
           </Routes>
           {isUserAuthenticated && (
 
-          <footer className="footer">
-            <div className="footer-content">
-              <div className="footer-section">
-                <h3>Location</h3>
-                <p>SpiceRoute Schäftlarnstraße 166, 81371 München, Germany</p>
-                <p>
-                  <a
-                    href="https://maps.app.goo.gl/CfyQtxhbwDCsRMof8"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="view-on-map"
-                  >
-                    View on Map
-                  </a>
-                </p>
-              </div>
-              <div className="footer-section">
-                <h3>Working Hours</h3>
-                <p>Wednesdays - Fridays: 9:00 - 21:00 </p>
-                <p>Saturdays - Sundays: 11:00 - 21:00 </p>
-              </div>
+            <footer className="footer">
+              <div className="footer-content">
+                <div className="footer-section">
+                  <h3>Location</h3>
+                  <p>SpiceRoute Schäftlarnstraße 166, 81371 München, Germany</p>
+                  <p>
+                    <a
+                      href="https://maps.app.goo.gl/CfyQtxhbwDCsRMof8"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="view-on-map"
+                    >
+                      View on Map
+                    </a>
+                  </p>
+                </div>
+                <div className="footer-section">
+  <h3 className="footer-title">Working Hours</h3>
+  <div className="working-hours">
+    <div className="working-day">
+      <span className="day">Wed - Fri :</span>
+      <span className="hours">17:30 - 22:30</span>
+    </div>
+    <div className="working-day">
+      <span className="day">Sat - Sun:</span>
+      <span className="hours">12:00 - 15:00 & 17:30 - 22:30</span>
+    </div>
+  </div>
+</div>
 
-              <div className="footer-section">
-                <h3>Contact</h3>
-                <p>Tel: +49 89 46220082</p>
-                <p>Phone: +49 155 60684508</p>
-                <p>Email: <a href="mailto:Contact@thespiceroute.de">Contact@thespiceroute.de</a></p>
-              </div>
-              <div className="footer-section">
-                <h3>Follow Us</h3>
-                <div className="social-media">
-                  <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-                    <FontAwesomeIcon icon={faFacebookF} />
-                  </a>
-                  <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-                    <FontAwesomeIcon icon={faTwitter} />
-                  </a>
-                  <a href="https://www.instagram.com/spiceroute.de?igsh=ZjhwYnpibTBjcHIx" target="_blank" rel="noopener noreferrer">
-                    <FontAwesomeIcon icon={faInstagram} />
-                  </a>
-                  {/* <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+
+
+                <div className="footer-section">
+                  <h3>Contact</h3>
+                  <p>Tel: +49 89 46220082</p>
+                  <p>Phone: +49 155 60684508</p>
+                  <p>Email: <a href="mailto:Contact@thespiceroute.de">Contact@thespiceroute.de</a></p>
+                </div>
+                <div className="footer-section">
+                  <h3>Follow Us</h3>
+                  <div className="social-media">
+                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+                      <FontAwesomeIcon icon={faFacebookF} />
+                    </a>
+                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+                      <FontAwesomeIcon icon={faTwitter} />
+                    </a>
+                    <a href="https://www.instagram.com/spiceroute.de?igsh=ZjhwYnpibTBjcHIx" target="_blank" rel="noopener noreferrer">
+                      <FontAwesomeIcon icon={faInstagram} />
+                    </a>
+                    {/* <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
                     <FontAwesomeIcon icon={faLinkedinIn} />
                   </a> */}
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="footer-bottom">
-              <p>&copy; 2025 Spice Route Restaurant. All rights reserved.</p>
-            </div>
-          </footer>
+              <div className="footer-bottom">
+                <p>&copy; 2025 Spice Route Restaurant. All rights reserved.</p>
+              </div>
+            </footer>
           )}
         </div>
       </Router>

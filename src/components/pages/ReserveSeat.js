@@ -52,23 +52,42 @@ const ReserveSeat = () => {
       setTimeout(() => setNotification(null), 3000);
       return;
     }
-  
-    // Validate that the reservation date is on a Wednesday to Sunday (weekdays 3-7)
+
+    // Get the day of the week (0 = Sunday, 1 = Monday, ..., 6 = Saturday)
     const selectedDay = selectedDateTime.getDay();
-    if (selectedDay < 3 || selectedDay > 7) {  // 3 = Wednesday, 7 = Sunday
+    const selectedHour = selectedDateTime.getHours();
+    const selectedMinute = selectedDateTime.getMinutes();
+
+    // Check if the reservation falls within the working hours based on the day
+    if (selectedDay >= 3 && selectedDay <= 5) { // Wednesday to Friday
+      // Valid working hours: 17:30 - 22:30
+      if (!(selectedHour === 17 && selectedMinute >= 30) && 
+          !(selectedHour > 17 && selectedHour < 22) && 
+          !(selectedHour === 22 && selectedMinute <= 30)) {
+        setNotification({ type: 'error', message: 'Reservations are only allowed between 17:30 and 22:30 on Wednesdays to Fridays.' });
+        setTimeout(() => setNotification(null), 3000);
+        return;
+      }
+    } else if (selectedDay === 6 || selectedDay === 0) { // Saturday or Sunday
+      // Valid working hours: 12:00 - 15:00 and 17:30 - 22:30
+      if (
+        !(selectedHour === 12 && selectedMinute >= 0) &&
+        !(selectedHour > 12 && selectedHour < 15) &&
+        !(selectedHour === 15 && selectedMinute === 0) &&
+        !(selectedHour === 17 && selectedMinute >= 30) &&
+        !(selectedHour > 17 && selectedHour < 22) &&
+        !(selectedHour === 22 && selectedMinute <= 30)
+      ) {
+        setNotification({ type: 'error', message: 'Reservations are only allowed between 12:00-15:00 and 17:30-22:30 on Saturdays and Sundays.' });
+        setTimeout(() => setNotification(null), 3000);
+        return;
+      }
+    } else { // Monday or Tuesday
       setNotification({ type: 'error', message: 'Reservations are only allowed from Wednesday to Sunday.' });
       setTimeout(() => setNotification(null), 3000);
       return;
     }
-  
-    // Validate that the time is between 9 AM and 9 PM
-    const selectedHour = selectedDateTime.getHours();
-    if (selectedHour < 9 || selectedHour > 21) {
-      setNotification({ type: 'error', message: 'Reservations can only be made between 9 AM and 9 PM.' });
-      setTimeout(() => setNotification(null), 3000);
-      return;
-    }
-  
+
     // Save the reservation data to localStorage with Pending status
     const newReservation = { ...formData, status: 'Pending' }; // Ensure the status is 'Pending' when the user submits
     localStorage.setItem('reservation', JSON.stringify(newReservation));
@@ -78,7 +97,8 @@ const ReserveSeat = () => {
   
     setNotification({ type: 'success', message: 'Reservation submitted successfully!' });
     setTimeout(() => setNotification(null), 3000); // Hide the notification after 3 seconds
-  };
+};
+
 
   const handleChangeReservation = () => {
     // Allow user to update the form (this already happens as they can change the inputs and resubmit)
